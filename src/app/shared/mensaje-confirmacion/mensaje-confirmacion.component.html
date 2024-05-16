@@ -1,0 +1,11 @@
+<div mat-dialog style="border-radius: 30px; max-width: 600px;">
+    <h2 mat-dialog-title style="background-color: #0a746b; color: white; text-align: center;">¡Alerta!</h2>
+    <div mat-dialog-content style="border-radius: 10px;">
+        <p style="text-align: center;">{{ mensaje }}</p>
+    </div>
+    <div mat-dialog-actions style="display: flex; justify-content: space-around;">
+      <button mat-button (click)="onNoClick()" style="background-color: #06504a; color: white; border-radius: 10px;">Cancelar</button>
+      <button mat-button mat-dialog-close="btn" cdkFocusInitial style="background-color: #06504a; color: white; border-radius: 10px;">Aceptar</button>
+    </div>
+  </div>
+  

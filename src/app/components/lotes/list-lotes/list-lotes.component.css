@@ -1,0 +1,15 @@
+button { 
+    background-color: #06504a;
+    border-color: #06504a;
+    border-bottom: 40%;
+    width: 40%;
+    color: white;
+}
+
+.warning-row {
+    background-color: #ec9696 !important;
+}
+  
+.schedule-row {
+    background-color: #dbda8a !important;
+}

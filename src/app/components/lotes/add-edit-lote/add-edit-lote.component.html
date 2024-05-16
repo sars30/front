@@ -1,0 +1,136 @@
+<div class="row justify-content-center" style="margin-top: 95px;">
+  <div class="col-lg-2" style="display: flex; justify-content: space-around;">
+      <h2>{{accion}} Lote</h2>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-lg-4">
+      <form [formGroup]="myForm" autocomplete="off">
+
+        <div class="form-field col-lg12">
+            <mat-form-field class="example-container" [style.fontsiza.px]=16>
+                <mat-label>Codigo del lote</mat-label>
+                <input matInput formControlName="Cod_Lote" type="text">
+            </mat-form-field>  
+            <div *ngIf="myForm.get('Cod_Lote')?.hasError('required') && myForm.get('Cod_Lote')?.touched"
+              style="margin-top: 20px;">
+              <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+            </div>
+            <div *ngIf="myForm.get('Cod_Lote')?.hasError('maxlength') && myForm.get('Cod_Lote')?.touched"
+              style="margin-top: 20px;">
+              <span class="mda-form-msg">Este campo debe tener como máximo<strong>30 caracteres</strong></span>
+            </div>
+        </div>
+
+          <div class="col-lg-12">
+            <div *ngIf="myForm.get('Fecha_ingreso')?.hasError('required') && myForm.get('Fecha_ingreso')?.touched"
+                style="margin-top: -20px;">
+                <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+            </div>
+            <mat-form-field class="example-container" [style.fontsiza.px]=16>
+                <mat-label>Fecha de Ingreso</mat-label>
+                <input matInput formControlName="Fecha_ingreso" [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+            <div class="form-field col-lg12">
+                <div *ngIf="myForm.get('Fecha_fabri')?.hasError('required') && myForm.get('Fecha_fabri')?.touched"
+                style="margin-top: 20px;">
+                <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+            </div>
+            <mat-form-field class="example-container" [style.fontsiza.px]=16>
+                <mat-label>Fecha de fabricación</mat-label>
+                <input matInput formControlName="Fecha_fabri" [matDatepicker]="picker1">
+                <mat-hint>MM/DD/YYYY</mat-hint> 
+                <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+  
+        </div>
+          <div class="form-field col-lg12">
+            <div *ngIf="myForm.get('Fecha_venc')?.hasError('required') && myForm.get('Fecha_venc')?.touched"
+                style="margin-top: -20px;">
+                <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+            </div>
+              <mat-form-field class="example-container" [style.fontsiza.px]=16>
+                  <mat-label>Fecha de Vencimineto</mat-label>
+                  <input matInput formControlName="Fecha_venc" [matDatepicker]="picker2">
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+          </div>
+
+          <div class="form-field col-lg12">
+            <div *ngIf="myForm.get('Unidades')?.hasError('required') && myForm.get('Unidades')?.touched"
+            style="margin-top: 20px;">
+            <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+          </div>
+          <div *ngIf="myForm.get('Unidades')?.hasError('maxlength') && myForm.get('Unidades')?.touched"
+            style="margin-top: 20px;">
+            <span class="mda-form-msg">Este campo debe tener como máximo<strong>5 caracteres</strong></span>
+          </div>
+              <mat-form-field class="example-container" [style.fontsiza.px]=16>
+                  <mat-label>Unidades</mat-label>
+                  <input matInput formControlName="Unidades" type="number">
+              </mat-form-field>  
+          </div>
+
+          <div class="form-field col-lg12">
+            <div *ngIf="myForm.get('Descripcion')?.hasError('required') && myForm.get('Descripcion')?.touched"
+              style="margin-top: -20px;">
+              <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+            </div>
+            <div *ngIf="myForm.get('Descripcion')?.hasError('maxlength') && myForm.get('Descripcion')?.touched"
+              style="margin-top: -20px;">
+              <span class="mda-form-msg">Este campo debe tener como máximo<strong>100 caracteres</strong></span>
+            </div>
+              <mat-form-field class="example-container" [style.fontsiza.px]=16>
+                  <mat-label>Descripción</mat-label>
+                  <input matInput formControlName="Descripcion" type="text">
+              </mat-form-field>
+          </div>
+          
+          <div class="col-lg12">
+            <div *ngIf="myForm.get('producto')?.hasError('required') && myForm.get('producto')?.touched"
+              style="margin-top: -20px;">
+              <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+            </div>
+            <mat-form-field class="example-container" [style.fontsiza.px]=16>
+              <mat-label>Producto</mat-label>
+              <mat-select formControlName="producto">
+                <!-- Utiliza un *ngFor para iterar sobre los productos y mostrar cada nombre como una opción -->
+                <mat-option *ngFor="let producto of productos" [value]="producto.Id_Producto">{{ producto.Nombre }}</mat-option>
+              </mat-select>                
+            </mat-form-field>
+            <div *ngIf="myForm.get('producto')?.hasError('required') && myForm.get('producto')?.touched" style="margin-top: -20px;">
+              <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+            </div>
+          </div>
+          
+          <div class="col-lg12">
+            <div *ngIf="myForm.get('proveedor')?.hasError('required') && myForm.get('proveedor')?.touched"
+              style="margin-top: -20px;">
+              <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+            </div>
+            <mat-form-field class="example-container" [style.fontsiza.px]=16>
+                <mat-label>Proveedor</mat-label>
+                <mat-select formControlName="proveedor">
+                  <mat-option *ngFor="let proveedor of proveedores; let i = index" [value]="proveedor.Id_Proveedor">{{ proveedor.nombre }}</mat-option>
+                </mat-select>                
+              </mat-form-field>
+              <div *ngIf="myForm.get('proveedor')?.hasError('required') && myForm.get('proveedor')?.touched" style="margin-top: -20px;">
+                <span class="mda-form-msg">Este campo es <strong>obligatorio</strong></span>
+              </div>
+          </div>
+
+          <div class="col-lg-12" style="display: flex; justify-content: space-around;">
+            <button mat-raised-button style="background-color: #06504a; color: white;" (click)="guardarLote()">Guardar</button>
+            <button mat-raised-button style="background-color: #06504a; color: white;" (click)="listarLote()">Listado de lotes</button>
+          </div>
+      </form>
+  </div>
+</div>

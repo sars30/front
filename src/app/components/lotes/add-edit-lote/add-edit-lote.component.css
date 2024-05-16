@@ -1,0 +1,11 @@
+.example-container{
+    width: 100%; 
+ }
+
+ button { 
+    background-color: #8b1c6d;
+    border-color: #fcbe00;
+    border-bottom: 40%;
+    width: 40%;
+    color: white;
+}

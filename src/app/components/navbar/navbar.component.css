@@ -1,0 +1,24 @@
+.mat-toolbar {
+    background-color: #06504a;
+}
+
+.navbar-fixed-top{
+    height: 90px;
+    position: fixed;
+    width: 100%; 
+    z-index: 1000;
+}
+
+.navbar{
+    height: 90px;
+}
+
+.navbar-brand{
+    font-size: 1.3rem; 
+}
+
+.menu{
+    background-color: #fcbe00;
+}
+
+

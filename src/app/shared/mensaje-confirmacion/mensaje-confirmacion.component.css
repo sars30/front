@@ -1,0 +1,46 @@
+/* Estilos generales del diálogo */
+div.mat-dialog {
+    border-radius: 30px;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* Estilos del título del diálogo */
+  h2.mat-dialog-title {
+    background-color: #0a746b;
+    color: #06504a;
+    border-radius: 30px 30px 0 0; /* Redondear solo la parte superior */
+    padding: 20px; /* Agregar espacio alrededor del texto */
+  }
+  
+  /* Estilos del contenido del diálogo */
+  div.mat-dialog-content {
+    border-radius: 0 0 30px 30px; /* Redondear solo la parte inferior */
+    padding: 20px; /* Agregar espacio alrededor del contenido */
+    text-align: center; /* Centrar el texto */
+  }
+
+  p {
+    font-weight: bold; /* Hacer el texto en negrita */
+  }
+
+  /* Estilos de los botones del diálogo */
+  div.mat-dialog-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px; /* Agregar espacio arriba */
+  }
+  
+  button.mat-button {
+    background-color: #06504a;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px; /* Agregar espacio dentro del botón */
+    cursor: pointer;
+  }
+  
+  button.mat-button:hover {
+    background-color: #043d37; /* Cambiar color al pasar el mouse */
+  }
+  

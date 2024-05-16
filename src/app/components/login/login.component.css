@@ -1,0 +1,10 @@
+.example-container{
+    width: 100%; 
+ }
+ 
+.custom-button {
+    background-color: #06504a;
+    border-color: #06504a;
+    border-bottom: 40%;
+    width: 40%;
+}

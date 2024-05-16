@@ -1,0 +1,30 @@
+<mat-toolbar class="navbar fixed-top">
+    <!-- Ajustamos el z-index del navbar -->
+    <div class="navbar-brand text-light" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div>
+        <span style="margin-left: 10px;">VieraMrket Administración de caducidad de productos</span>
+        <button mat-raised-button style="background-color: white; color: #06504a; margin-left: 400px" (click)="cerrarSesion()">Cerrar Sesión</button>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <section id = "menu_xd" style="position: relative; z-index: 1000; display: none;">
+          <div class="example-label"></div>
+          <div class="example-button-row">
+            <div class="example-flex-container">
+              <div class="example-button-container" style="position: relative; z-index: 1001;">
+                <button mat-mini-fab aria-label="Example icon button with a menu icon" [matMenuTriggerFor]="menu" style="color: white; background-color: #073632;">
+                  <mat-icon>menu</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" style="z-index: 1001;">
+                  <button mat-menu-item style="background-color: #06504a; color: white;" (click)="irACrearLote()">Lote</button>
+                  <button mat-menu-item style="background-color: #06504a; color: white;" (click)="irACrearProducto()">Producto</button>
+                  <button mat-menu-item style="background-color: #06504a; color: white;" (click)="irACrearProveedor()">Proveedor</button>
+                  <button mat-menu-item style="background-color: #06504a; color: white;" (click)="irACrearUsuario()">Usuario</button>
+                  <button mat-menu-item style="background-color: #06504a; color: white;" (click)="irACrearRol()">Rol</button>
+                </mat-menu>
+              </div>
+            </div>
+          </div>
+        </section>   
+      </div>
+    </div>
+</mat-toolbar>
